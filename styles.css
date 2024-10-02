@@ -1,0 +1,150 @@
+/* General Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url("https://images.unsplash.com/photo-1579546929518-9e396f3cc809?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+    background-size: cover;
+}
+
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background: #ffffff56;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+/* Search Bar */
+.search-bar {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+#search-input {
+    width: 100%;
+    max-width: 400px;
+    padding: 10px 40px 10px 15px;
+    border: 2px solid #007BFF;
+    border-radius: 25px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+#search-input:focus {
+    border-color: #0056b3;
+    outline: none;
+}
+
+#clear-button {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    color: #aaa;
+    cursor: pointer;
+    display: none; /* Hidden by default */
+    transition: color 0.3s;
+}
+
+#clear-button:hover {
+    color: #333;
+}
+
+/* FAQ Section */
+.faq-container {
+    margin: 20px 0;
+}
+
+.faq {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease-in-out, transform 0.3s;
+}
+
+.faq:hover {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+}
+
+.question {
+    font-size: 1.2rem;
+    color: #007BFF;
+    cursor: pointer;
+    position: relative;
+}
+
+.question::after {
+    content: '\25BC'; /* Arrow Down Icon */
+    font-size: 0.8rem;
+    position: absolute;
+    right: 10px;
+    transition: transform 0.3s;
+}
+
+.question.active::after {
+    transform: rotate(-180deg); /* Rotate arrow when active */
+}
+
+.answer {
+    display: none;
+    font-size: 1rem;
+    color: #555;
+    margin-top: 10px;
+    padding-left: 10px;
+    border-left: 2px solid #007BFF;
+    transition: max-height 0.3s ease-in-out, opacity 0.3s;
+}
+
+.answer.show {
+    display: block;
+    opacity: 1;
+}
+
+/* Error Message */
+.error-message {
+    display: none;
+    color: #e74c3c;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 1.1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .container {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .question {
+        font-size: 1.1rem;
+    }
+
+    .answer {
+        font-size: 0.9rem;
+    }
+
+    #search-input {
+        max-width: 100%;
+    }
+}
